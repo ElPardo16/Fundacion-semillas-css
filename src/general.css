@@ -11,11 +11,37 @@
     --dosis: 'Dosis', sans-serif;
     --playfair: 'Playfair Display', serif;
 }
+/* Custom ScrollBar */
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-bg-scroll); 
+}
+ 
+::-webkit-scrollbar-thumb {
+  background: var(--accent);
+  border-radius: 25px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--hover); 
+}
+
+/********************/
 h1, h2{
     font-family: var(--playfair);
 }
 p{
     font-family: var(--dosis);
+}
+a{
+    text-decoration: none;
+}
+li{
+    list-style: none;
 }
 header{
     height: 80px;
