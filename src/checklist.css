@@ -2,23 +2,25 @@
     background-color: var(--gris);
     width:60%;
     margin: auto;
-    margin-top: 50px;
-    padding: 20px;
-}
-.title-work{
+    margin-top: 30px ;
     display: flex;
-    margin-left: 20px;
+    border-radius: 10px;
+    box-shadow: #928d8d 2px 2px 5px;
 }
 h1{
-    margin: 0px 20px;
+    margin:0px 0px 20px 20px ;
 }
+label{
+    padding: 20px;
+    border-radius: 10px;
+}
+
 [type="checkbox"]{display:none;}
 label{
     padding-left: 1.3em;
     position: relative;
     color:#000;
 }
-
 label:before{
     content:'';
     border: solid 1.5px #e9a8a8;
@@ -26,7 +28,7 @@ label:before{
     width: 20px;
     height: 20px;
     position: absolute;
-    left: 0px;
+    left: 10px;
     transition: all 0.2s;
     transform: rotate(0deg);
     margin-top: 5px;
@@ -35,13 +37,13 @@ label:before{
 [type="checkbox"]:checked + label{
     color: #fff;
     content: '';
+    background-color: var(--accent);
     
-
 }
 [type="checkbox"]:checked + label:before{
     border-color: #fff;
     color: var(--accent);
     content: 'J';
     transform: rotate(360deg);
+    background-color: #fff;
 }
-
