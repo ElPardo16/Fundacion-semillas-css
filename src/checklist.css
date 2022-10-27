@@ -1,13 +1,15 @@
+
 .work{
-    width:70%;
+    position: relative;
+    width:60%;
     margin: auto;
     margin-top: 20px ;
     display: flex;
     border-radius: 10px;
-    font-size: clamp(.8rem, 1.5vw ,.9rem);
+    font-size: clamp(.8rem, 1.5vw ,1rem);
 }
 .title-work{
-    margin:0px 0px 20px 20px ;
+    margin:0px 0px 20px 40px ;
 }
 label{
     padding: 20px;
@@ -15,14 +17,15 @@ label{
     background-color: var(--gris);
     border: #e9a8a8 2px solid;
     box-shadow: #928d8d 2px 2px 5px;
+    position: relative;
 }
 .add{
     display: flex;
-    float: right;
-    margin-right: 10%;
-    margin-bottom: 20px;
-    padding:   10px  20px  ;
-    font-size: 40px;
+    position: absolute;
+    bottom:40px;
+    right: 40px;
+    padding:   7.5px  15px  ;
+    font-size: 30px;
     background-color: var(--accent);
     border-radius: 50%;
 }
@@ -34,16 +37,16 @@ a{
 .add:hover{
     background-color:var(--hover);
 }
-.add a:hover{
-    color: var(--accent);
+
+
+[type="checkbox"]{
+    display:none;
+
 }
-
-
-[type="checkbox"]{display:none;}
 label{
     padding-left: 1.3em;
-    position: relative;
     color:#000;
+    position: relative;
 }
 label:before{
     content:'';
@@ -52,26 +55,48 @@ label:before{
     width: 20px;
     height: 20px;
     position: absolute;
-    left: 10px;
+    left: 20px;
+    top: 20px;
     transition: all 0.2s;
     transform: rotate(0deg);
     margin-top: 5px;
+
 }
 
 [type="checkbox"]:checked + label{
     color: #fff;
     content: '';
     background-color: var(--accent);
-    border:none;
+    border:var(--accent) solid 2px;
     
 }
 [type="checkbox"]:checked + label:before{
     border-color: #fff;
     color: var(--accent);
-    content: 'J';
+    content:'';
     transform: rotate(360deg);
     background-color: #fff;
 }
+.check{
+    display: none;
+    position: absolute;
+    margin: auto;
+    top:25px;
+    left:27px;
+    width: 10px;
+    height: 20px;
+    border: var(--accent) 3px solid;
+    border-left: none;
+    border-top: none;
+    transform: rotate(40deg);
+    z-index: 10;
+}
+
+[type="checkbox"]:checked + label .check{
+    display: block;
+}
+
+
 @media (max-width: 600px) {
     .work{
         width: 95%;
