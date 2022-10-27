@@ -16,7 +16,7 @@
     padding: 20px;
     border-radius: 10px;
     background-color: var(--gris);
-    border: #e9a8a8 2px solid;
+    border: #d37c7c 2px solid;
     box-shadow: #928d8d 2px 2px 5px;
     position: relative;
     padding-left: 1.3em;
@@ -27,8 +27,8 @@
 .add{
     display: flex;
     position: absolute;
-    bottom:40px;
-    right: 40px;
+    right: 150px;
+    margin: 50px;
     padding:   7.5px  15px  ;
     font-size: 30px;
     background-color: var(--accent);
@@ -42,11 +42,12 @@ a{
 .add:hover{
     background-color:var(--hover);
 }
+:root{
+    --t:"0/5"
+}
 [type="checkbox"]{
     display:none;
-
 }
-
 .label-card:before{
     content:'';
     border: solid 1.5px #e9a8a8;
@@ -59,15 +60,13 @@ a{
     transition: all 0.2s;
     transform: rotate(0deg);
     margin-top: 5px;
-
 }
-
 [type="checkbox"]:checked + .label-card{
     color: #fff;
     content: '';
     background-color: var(--accent);
     border:var(--accent) solid 2px;
-    
+    --t:"5/5"
 }
 [type="checkbox"]:checked + .label-card:before{
     border-color: #fff;
@@ -90,24 +89,20 @@ a{
     transform: rotate(40deg);
     z-index: 10;
 }
-
 [type="checkbox"]:checked + .label-card .check{
     display: block;
 }
 [type="checkbox"]:checked + .label-card .state{
     display: none;
 }
-
 .student{
     display: flex;
     align-items: center;
     margin-bottom: 20px;
     margin-left: 40%;
-    
 }
 .state{
     color: red;
-    
 }
 .img-student{
     width: 70px;
@@ -123,12 +118,27 @@ a{
 .calification{
     display: flex;
     align-items: center;
+    position: relative;
+    margin-left: 20%;
+}
+.calification::before{
+    content: var(--t);
+    position: absolute;
+    top:0;
+    right: 110%;
+    font-size: 1.3rem;
+    height: 100%;
+    line-height: 50px;
+    display: block;
+    font-family: var(--dosis);
+    font-weight: bold;
 }
 .calification-1{
     text-align: center;
+    
 }
-.points{
-    margin-right: 20px;
+[type="checkbox"]:checked {
+    --t:"4/5"
 }
 .star, .star:before{
     position: relative;
@@ -153,15 +163,66 @@ a{
 [type="checkbox"]:checked + .label-card .star:before{
     background-color: yellow;
 }
-@media (max-width: 600px) {
+@media (max-width: 700px) {
     .work{
         width: 95%;
     }
-    .container{
+    .state{
         display:none;
     }
     .student-name{
         display: none;
+    }
+    .studing{
+        font-size: 12px;
+    }
+    .label-card{
+        display: grid;
+        grid-template-columns: 200px 100px 150px;
+        margin: auto;
+    }
+    .img-student{
+        width: 60px;
+        height: 60px;
+        margin-left: 0px;
+    }
+    .title-work{
+        font-size: 15px;
+    }
+    .star{
+        width: 30px;
+        height: 30px;
+    }
+    .calification-1{
+        margin-top: 20px;
+    }
+    .calification::before{
+        font-size: 15px;
+        line-height: 30px
+    }
+    .add{
+        position: absolute;
+        
+    }
+}
+@media (max-width: 400px) {
+    .label-card{
+        display: grid;
+        grid-template-columns: 180px 50px 120px;
+    }
+    .star{
+        width: 30px;
+        height: 20px;
+    }
+    .calification{
+        margin-top:10px;
+    }
+    .title-work{
+        font-size: 13px;
+    }
+    .calification::before{
+        font-size: 13px;
+        line-height:20px ;
     }
 }
 
