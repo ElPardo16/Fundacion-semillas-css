@@ -1,7 +1,7 @@
 
 .work{
     position: relative;
-    width:60%;
+    width:70%;
     margin: auto;
     margin-top: 20px ;
     display: flex;
@@ -10,6 +10,7 @@
 }
 .title-work{
     margin:0px 0px 20px 40px ;
+    display: flex;
 }
 label{
     padding: 20px;
@@ -47,7 +48,10 @@ label{
     padding-left: 1.3em;
     color:#000;
     position: relative;
+    display: grid;
+    grid-template-columns: 400px 200px 300px;
 }
+
 label:before{
     content:'';
     border: solid 1.5px #e9a8a8;
@@ -95,10 +99,73 @@ label:before{
 [type="checkbox"]:checked + label .check{
     display: block;
 }
+[type="checkbox"]:checked + label .state{
+    display: none;
+}
+
+.student{
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    margin-left: 40%;
+    
+}
+.state{
+    color: red;
+    
+}
+.img-student{
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    margin-left: 10%;
+    
+}
+
+.studing{
+    line-height: 30px;
+    font-size: 20px;
 
 
+}
+.calification{
+    display: flex;
+    align-items: center;
+    
+}
+.calification-1{
+    text-align: center;
+}
+.points{
+    margin-right: 20px;
+}
+.star, .star:before{
+    position: relative;
+    width: 40px;
+    height: 40px;
+    background-color: #e9a8a8;
+    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+}
+.star::before{
+    position: absolute;
+    content: '';
+    background-color: #fff;
+    width: 70%;
+    height: 70%;
+    inset: 0;
+    margin: auto;
+    z-index: 1;
+}
+[type="checkbox"]:checked + label .star{
+    background-color: white;
+}
+[type="checkbox"]:checked + label .star:before{
+    background-color: yellow;
+}
 @media (max-width: 600px) {
     .work{
         width: 95%;
     }
 }
+
+
