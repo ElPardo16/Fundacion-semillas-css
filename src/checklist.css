@@ -12,13 +12,17 @@
     margin:0px 0px 20px 40px ;
     display: flex;
 }
-label{
+.label-card{
     padding: 20px;
     border-radius: 10px;
     background-color: var(--gris);
     border: #e9a8a8 2px solid;
     box-shadow: #928d8d 2px 2px 5px;
     position: relative;
+    padding-left: 1.3em;
+    color:#000;
+    display: grid;
+    grid-template-columns: 400px 200px 300px;
 }
 .add{
     display: flex;
@@ -38,21 +42,12 @@ a{
 .add:hover{
     background-color:var(--hover);
 }
-
-
 [type="checkbox"]{
     display:none;
 
 }
-label{
-    padding-left: 1.3em;
-    color:#000;
-    position: relative;
-    display: grid;
-    grid-template-columns: 400px 200px 300px;
-}
 
-label:before{
+.label-card:before{
     content:'';
     border: solid 1.5px #e9a8a8;
     border-radius: 3px;
@@ -67,14 +62,14 @@ label:before{
 
 }
 
-[type="checkbox"]:checked + label{
+[type="checkbox"]:checked + .label-card{
     color: #fff;
     content: '';
     background-color: var(--accent);
     border:var(--accent) solid 2px;
     
 }
-[type="checkbox"]:checked + label:before{
+[type="checkbox"]:checked + .label-card:before{
     border-color: #fff;
     color: var(--accent);
     content:'';
@@ -96,10 +91,10 @@ label:before{
     z-index: 10;
 }
 
-[type="checkbox"]:checked + label .check{
+[type="checkbox"]:checked + .label-card .check{
     display: block;
 }
-[type="checkbox"]:checked + label .state{
+[type="checkbox"]:checked + .label-card .state{
     display: none;
 }
 
@@ -121,17 +116,13 @@ label:before{
     margin-left: 10%;
     
 }
-
 .studing{
     line-height: 30px;
     font-size: 20px;
-
-
 }
 .calification{
     display: flex;
     align-items: center;
-    
 }
 .calification-1{
     text-align: center;
@@ -156,15 +147,21 @@ label:before{
     margin: auto;
     z-index: 1;
 }
-[type="checkbox"]:checked + label .star{
+[type="checkbox"]:checked + .label-card .star{
     background-color: white;
 }
-[type="checkbox"]:checked + label .star:before{
+[type="checkbox"]:checked + .label-card .star:before{
     background-color: yellow;
 }
 @media (max-width: 600px) {
     .work{
         width: 95%;
+    }
+    .container{
+        display:none;
+    }
+    .student-name{
+        display: none;
     }
 }
 
