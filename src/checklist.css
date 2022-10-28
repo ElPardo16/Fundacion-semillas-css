@@ -1,4 +1,10 @@
 
+.title-checklist{
+    font-size: clamp(1.3rem, 2.5vw, 3rem);
+    padding: 20px ;
+    text-align: center;
+    color: var(--accent);
+}
 .work{
     position: relative;
     width:70%;
@@ -163,28 +169,32 @@ a{
 [type="checkbox"]:checked + .label-card .star:before{
     background-color: yellow;
 }
-@media (max-width: 700px) {
+@media (max-width: 900px) and (min-width: 481px) {
     .work{
         width: 95%;
     }
-    .state{
-        display:none;
+    .add{
+        padding:   5px  10px;
+        font-size: 20px;
+        margin: auto;
+        margin:auto;
+        right: 50%;
+        margin: 20px 0px 20px 0px;
     }
-    .student-name{
-        display: none;
-    }
+    
     .studing{
         font-size: 12px;
     }
     .label-card{
+        width: 95%;
         display: grid;
-        grid-template-columns: 200px 100px 150px;
+        grid-template-columns: 50% 15% 30%;
         margin: auto;
     }
     .img-student{
         width: 60px;
         height: 60px;
-        margin-left: 0px;
+        margin-left: 20px;
     }
     .title-work{
         font-size: 15px;
@@ -205,14 +215,34 @@ a{
         
     }
 }
-@media (max-width: 400px) {
+@media (max-width: 480px)  {
+    .work{
+        width: 95%;
+    }
     .label-card{
+        width: 100%;
         display: grid;
-        grid-template-columns: 180px 50px 120px;
+        grid-template-columns: 50% 15% 30%;
     }
     .star{
-        width: 30px;
-        height: 20px;
+        width: 25px;
+        height: 25px;
+    }
+    .add{
+        padding:   4px  8px;
+        font-size: 20px;
+        margin: auto;
+        margin:auto;
+        right: 50%;
+        margin: 20px 0px 20px 0px;
+    }
+    .img-student{
+        width: 40px;
+        height: 40px;
+        margin-left: 20px;
+    }
+    .state{
+        display: none;
     }
     .calification{
         margin-top:10px;
@@ -224,6 +254,35 @@ a{
         font-size: 13px;
         line-height:20px ;
     }
+    .studing{
+        font-size: 12px;
+    }
 }
+@media (max-width:380px) {
+    .label-card{
+        width: 100%;
+        grid-template-columns: 50% 15% 35%;
+    }
+    .student-name{
+        display: none;
+    }
+    .calification::before{
+        display: none;
+    }
+    .star{
+        width: 70px;
+        height: 20px;
+    }
+    .img-student{
+        width: 60px;
+        height: 60px;
+    }
+    .title-work{
+        font-size: 11px;
+        margin-top: 5px;
+    }
+}
+    
+
 
 
