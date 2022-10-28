@@ -7,26 +7,32 @@
 
 aside{
 	display: grid;
-	grid-gap: 1rem;
-	height: calc(100vh - 80px);
-	background: var(--gris);
+	min-height: calc(100vh - 80px);
+    place-items: center;
+	background: var(--dark);
 }
 aside h1{
-	color: var(--accent);
+	color: white;
 	padding: 25px;
 	font-size: clamp(2.3rem, 1.5vw ,1.4rem);
 }
 
 aside ul{
-	justify-content: center;
-    align-items: center;
-
+    justify-self: stretch;
+    display: grid;
+    grid: repeat(6, 1fr) / 1fr;
 }
 
 aside ul li{
 	margin-bottom: 25px;
 	width: 100%;
-	height: auto;
+	height: 100%;
+    display: grid;
+    place-items: center start;
+    padding-left: 20px;
+}
+aside ul li:hover{
+    background: var(--accent);
 }
 
 aside ul li a{
@@ -45,7 +51,7 @@ aside img{
 
 aside p{
 	display: inline;
-	color: black;
+	color: white;
 	font-size: 1.3rem;
 	font-weight: bold;
 }
@@ -57,10 +63,12 @@ main{
 }
 .card{
 	border-radius: 20px;
-	background: var(--gris);
+	background: var(--dark);
+    color: white;
+    box-shadow: rgba(0, 0, 0, .6) 3px 3px 7px;
 }
 .card-info{
-	padding: 15px;
+	padding: 15px 30px;
 	display: flex;
 	gap: 30px;
 	align-items: center;
@@ -89,12 +97,12 @@ section > h1{
 	--titulo_m: "Reciclaje";
 	--r: rotate(180deg);
 	--h: hidden;
-	--t: 0;
+	--t: scaleY(0);
 	overflow: var(--h);
 }
 .materias:hover{
 	--h: normal;
-	--t: 300%;
+	--t: scaleY(1);
 	--r: rotate(0);
 }
 .materias::before{
@@ -112,39 +120,38 @@ section > h1{
 	width: 0; height: 0;
 	border-top: 0 solid transparent;
 	border: 10px solid transparent;
-	border-bottom: 10px solid red;
+	border-bottom: 10px solid white;
 	inset: 0;
 	margin: auto;
 	margin-right: 30px;
 	transform: var(--r);
 	transition: all ease .4s;
 }
-
-.lista{
-}
 .lista ul{
 	position: absolute;
-	height: var(--t);
+	height: 300%;
 	width: 90%;
 	top: 100%; 
 	left: 0; right: 0;
-	background: skyblue;
+	background: var(--accent);
 	display: grid;
 	grid: repeat(3,1fr) / 1fr;
 	justify-items: start;
 	margin: 0 auto;
 	transition: all ease .4s;
 	z-index: 100;
+    transform: var(--t);
+    transform-origin: 0 0;
+    font-family: var(--dosis);
 }
 .lista ul li{
 	line-height: 50px;
 	padding-left: 30px;
-	border-bottom: 1px solid #c2c2c2;
 }
 .bars{
 	display: grid;
 	grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-	padding: 20px;
+	padding: 50px 20px;
 	gap: 40px;
 	place-items: strech;
 }
@@ -153,6 +160,7 @@ section > h1{
 	padding: 30px 40px;
 	display: flex;
 	flex-direction: column;
+    align-items: center;
 	gap: 30px;
 }
 
@@ -161,6 +169,7 @@ section > h1{
 }
 
 .stats > div{
+    width: 160px;
 	height: 160px;
 	position: relative;
 }
@@ -185,7 +194,6 @@ section > h1{
 	position: absolute;
 	left: 0; top: 0;
 	height: 100%;
-	background: red;
 	width: 80%;
 	text-align: right;
 	padding: 0 5px;
@@ -195,18 +203,23 @@ section > h1{
 
 .bar:nth-child(1)::before{
 	width: 85%;
+    background: rgb(199, 26, 26);
 }
 .bar:nth-child(2)::before{
 	width: 70%;
+    background: rgb(22, 22, 190);
 }
 .bar:nth-child(3)::before{
 	width: 81%;
+    background: violet;
 }
 .bar:nth-child(4)::before{
 	width: 35%;
+    background: gold;
 }
 .bar:nth-child(5)::before{
 	width: 25%;
+    background: var(--accent);
 }
 
 .grafica2{
@@ -227,7 +240,7 @@ section > h1{
 	width: 100%;
 	height: 150px;
 	border-radius: 50%;
-	border: 20px solid hotpink;
+	border: 20px solid rgb(16, 139, 221);
 	border-right-color: rgba(0, 0, 0, .6);
 	border-bottom-color: rgba(0, 0, 0, .6);
 	top: 0; left: 0;
@@ -307,9 +320,23 @@ section > h1{
 	height: 14px;
 	margin-top: 20px;
 }
-
 .face:not(:first-child)::before{
-	box-shadow: black 15px 0 0;
+    box-shadow: black 14px 0 0;
+}
+.face:not(:first-child){
+    opacity: .4;
+}
+.face:first-child{
+    animation: escalar 1.8s ease infinite;
+    border-color: var(--accent);
+}
+.face:first-child::before{
+    background: var(--accent);
+	box-shadow: var(--accent) 30px 0 0;
+}
+.face:first-child::after{
+    border-right-color: var(--accent);
+	border-bottom-color: var(--accent);
 }
 
 .progresoG{
@@ -345,4 +372,31 @@ section > h1{
 
 .progresoG p{
 	width: 200px;
+}
+/*keyframes*/
+@keyframes escalar {
+    0%{
+        transform: scale(1)
+    }
+    50%{
+        transform: scale(1.2)
+    }
+    100%{
+        transform: scale(1)
+    }
+}
+
+/*mediaquerys*/
+@media (min-width: 481px) and (max-width: 1000px){
+    .contenedor{
+        grid: min-content max-content / 1fr;
+    }
+    aside{
+        min-height: inherit;
+        max-height: 40vh;
+        grid: 1fr 3fr / 1fr;
+    }
+    aside ul{
+        grid: repeat(3, 1fr) / 1fr 1fr;
+    }
 }
