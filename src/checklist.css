@@ -1,0 +1,296 @@
+
+.title-checklist{
+    font-size: clamp(1.3rem, 2.5vw, 3rem);
+    padding: 20px ;
+    text-align: center;
+    color: var(--accent);
+}
+.work{
+    position: relative;
+    width:70%;
+    margin: auto;
+    margin-top: 20px ;
+    display: flex;
+    border-radius: 10px;
+    font-size: clamp(.8rem, 1.5vw ,1rem);
+}
+.title-work{
+    margin:0px 0px 20px 40px ;
+    display: flex;
+}
+.label-card{
+    margin: auto;
+    width: 100%;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: var(--gris);
+    border: #d37c7c 2px solid;
+    box-shadow: #928d8d 2px 2px 5px;
+    position: relative;
+    padding-left: 1.3em;
+    color:#000;
+    display: grid;
+    grid-template-columns: 50% 15% 35%;
+}
+.add{
+    display: flex;
+    position: absolute;
+    right: 0%;
+    margin: 50px;
+    padding:   7.5px  15px  ;
+    font-size: 30px;
+    background-color: var(--accent);
+    border-radius: 50%;
+}
+a{
+    text-decoration: none;
+    color: #fff;
+    font-weight: 600;
+}
+.add:hover{
+    background-color:var(--hover);
+}
+:root{
+    --t:"0/5"
+}
+[type="checkbox"]{
+    display:none;
+}
+.label-card:before{
+    content:'';
+    border: solid 1.5px #e9a8a8;
+    border-radius: 3px;
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    left: 20px;
+    top: 20px;
+    transition: all 0.2s;
+    transform: rotate(0deg);
+    margin-top: 5px;
+}
+[type="checkbox"]:checked + .label-card{
+    color: #fff;
+    content: '';
+    background-color: var(--accent);
+    border:var(--accent) solid 2px;
+    --t:"5/5"
+}
+[type="checkbox"]:checked + .label-card:before{
+    border-color: #fff;
+    color: var(--accent);
+    content:'';
+    transform: rotate(360deg);
+    background-color: #fff;
+}
+.check{
+    display: none;
+    position: absolute;
+    margin: auto;
+    top:25px;
+    left:27px;
+    width: 10px;
+    height: 20px;
+    border: var(--accent) 3px solid;
+    border-left: none;
+    border-top: none;
+    transform: rotate(40deg);
+    z-index: 10;
+}
+[type="checkbox"]:checked + .label-card .check{
+    display: block;
+}
+[type="checkbox"]:checked + .label-card .state{
+    display: none;
+}
+.student{
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    margin-left: 40%;
+}
+.state{
+    color: red;
+}
+.img-student{
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    margin-left: 10%;
+    
+}
+.studing{
+    line-height: 30px;
+    font-size: 20px;
+}
+.calification{
+    display: flex;
+    align-items: center;
+    position: relative;
+    margin-left: 20%;
+}
+.calification::before{
+    content: var(--t);
+    position: absolute;
+    top:0;
+    right: 110%;
+    font-size: 1.3rem;
+    height: 100%;
+    line-height: 50px;
+    display: block;
+    font-family: var(--dosis);
+    font-weight: bold;
+}
+.calification-1{
+    text-align: center;
+    
+}
+[type="checkbox"]:checked {
+    --t:"4/5"
+}
+.star, .star:before{
+    position: relative;
+    width: 40px;
+    height: 40px;
+    background-color: #e9a8a8;
+    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+}
+.star::before{
+    position: absolute;
+    content: '';
+    background-color: #fff;
+    width: 70%;
+    height: 70%;
+    inset: 0;
+    margin: auto;
+    z-index: 1;
+}
+[type="checkbox"]:checked + .label-card .star{
+    background-color: white;
+}
+[type="checkbox"]:checked + .label-card .star:before{
+    background-color: yellow;
+}
+@media (max-width: 800px) and (min-width: 481px) {
+    .work{
+        width: 95%;
+    }
+    .add{
+        padding:   5px  10px;
+        font-size: 20px;
+        margin: auto;
+        margin:auto;
+        right: 50%;
+        margin: 20px 0px 20px 0px;
+    }
+    
+    .studing{
+        font-size: 15px;
+        line-height: 20px;
+    }
+    .label-card{
+        width: 95%;
+        display: grid;
+        grid-template-columns: 50% 15% 30%;
+        margin: auto;
+    }
+    .img-student{
+        width: 60px;
+        height: 60px;
+        margin-left: 20px;
+    }
+    .title-work{
+        font-size: 16px;
+        padding-top: 6px;
+    }
+    .star{
+        width: 30px;
+        height: 30px;
+    }
+    .calification-1{
+        margin-top: 20px;
+    }
+    .calification::before{
+        font-size: 15px;
+        line-height: 30px
+    }
+    .add{
+        position: absolute;
+        
+    }
+}
+@media (max-width: 480px)  {
+    .work{
+        width: 95%;
+    }
+    .label-card{
+        width: 100%;
+        display: grid;
+        grid-template-columns: 50% 15% 30%;
+    }
+    .star{
+        width: 25px;
+        height: 25px;
+    }
+    .add{
+        padding:   4px  8px;
+        font-size: 20px;
+        margin: auto;
+        margin:auto;
+        right: 50%;
+        margin: 20px 0px 20px 0px;
+    }
+    .img-student{
+        width: 40px;
+        height: 40px;
+        margin: auto;
+    }
+    .state{
+        display: none;
+    }
+    .calification{
+        margin-top:10px;
+    }
+    .title-work{
+        font-size: 13px;
+    }
+    .calification::before{
+        font-size: 13px;
+        line-height:20px ;
+    }
+    .studing{
+        font-size: 12px;
+        line-height: 17px;
+    }
+}
+@media (max-width:380px) {
+    .label-card{
+        width: 100%;
+        grid-template-columns: 50% 15% 35%;
+    }
+    .student-name{
+        display: none;
+    }
+    .calification::before{
+        display: none;
+    }
+    .studing{
+        line-height: 15px;
+    }
+    .star{
+        width: 70px;
+        height: 20px;
+    }
+    .img-student{
+        width: 60px;
+        height: 60px;
+    }
+    .title-work{
+        font-size: 11px;
+        margin-top: 5px;
+    }
+}
+    
+
+
+
