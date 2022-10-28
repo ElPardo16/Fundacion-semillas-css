@@ -1,3 +1,17 @@
+:root{
+    --titulo_m: "Reciclaje";
+    --w1: 85%;
+    --w2: 70%;
+    --w3: 81%;
+    --w4: 35%;
+    --w5: 25%;
+    --t1: "85%";
+    --t2: "70%";
+    --t3: "81%";
+    --t4: "35%";
+    --t5: "25%";
+    --cr: rotate(0);
+}
 .contenedor{
 	display: grid;
 	grid: 1fr / 30% 1fr;
@@ -21,6 +35,8 @@ aside ul{
     justify-self: stretch;
     display: grid;
     grid: repeat(6, 1fr) / 1fr;
+    place-self: stretch;
+    padding-bottom: 20px;
 }
 
 aside ul li{
@@ -34,6 +50,9 @@ aside ul li{
 aside ul li:hover{
     background: var(--accent);
 }
+.select{
+    background: var(--accent);
+}
 
 aside ul li a{
 	display: flex; 
@@ -41,6 +60,8 @@ aside ul li a{
 	gap: 30px;
 	align-items: center;
 	padding-left: 20px;
+    width: 100%;
+    height: 100%;
 }
 
 aside img{
@@ -59,7 +80,36 @@ aside p{
 /* SECTION RIGHT */
 
 main{
-	padding: 30px 30px 20px;	
+	padding: 30px 30px 20px;
+    display: grid;
+}
+#m2:target{
+    --titulo_m: "Cartografia";
+    --w1: 65%;
+    --w2: 70%;
+    --w3: 90%;
+    --w4: 55%;
+    --w5: 75%;
+    --t1: "65%";
+    --t2: "70%";
+    --t3: "90%";
+    --t4: "55%";
+    --t5: "75%";
+    --cr: rotate(30deg);
+}
+#m3:target{
+    --titulo_m: "Ecologia del paisaje I";
+    --w1: 15%;
+    --w2: 90%;
+    --w3: 60%;
+    --w4: 35%;
+    --w5: 75%;
+    --t1: "15%";
+    --t2: "90%";
+    --t3: "60%";
+    --t4: "35%";
+    --t5: "75%";
+    --cr: rotate(-30deg);
 }
 .card{
 	border-radius: 20px;
@@ -94,7 +144,6 @@ section > h1{
 .materias{
 	min-height: 40px;
 	position: relative;
-	--titulo_m: "Reciclaje";
 	--r: rotate(180deg);
 	--h: hidden;
 	--t: scaleY(0);
@@ -147,6 +196,12 @@ section > h1{
 .lista ul li{
 	line-height: 50px;
 	padding-left: 30px;
+    display: block;
+    width: 100%;
+}
+.lista a{
+    color:white;
+    display: block;
 }
 .bars{
 	display: grid;
@@ -189,7 +244,7 @@ section > h1{
 }
 
 .bar::before{
-	content: attr(data-text);
+	content: "";
 	color: white;
 	position: absolute;
 	left: 0; top: 0;
@@ -197,28 +252,34 @@ section > h1{
 	width: 80%;
 	text-align: right;
 	padding: 0 5px;
-	
+    transform-origin: 0% 0%;
+    animation: llenar 2s ease;
 	font-family: var(--dosis);
 }
 
 .bar:nth-child(1)::before{
-	width: 85%;
+    content: var(--t1);
+	width: var(--w1);
     background: rgb(199, 26, 26);
 }
 .bar:nth-child(2)::before{
-	width: 70%;
+    content: var(--t2);
+	width: var(--w2);
     background: rgb(22, 22, 190);
 }
 .bar:nth-child(3)::before{
-	width: 81%;
+    content: var(--t3);
+	width: var(--w3);
     background: violet;
 }
 .bar:nth-child(4)::before{
-	width: 35%;
+    content: var(--t4);
+	width: var(--w4);
     background: gold;
 }
 .bar:nth-child(5)::before{
-	width: 25%;
+    content: var(--t5);
+	width: var(--w5);
     background: var(--accent);
 }
 
@@ -244,14 +305,19 @@ section > h1{
 	border-right-color: rgba(0, 0, 0, .6);
 	border-bottom-color: rgba(0, 0, 0, .6);
 	top: 0; left: 0;
+    animation: rotar 2s ease;
+    transform: var(--cr);
 }
 
-.grafica2 p{
+.grafica2 > div::before{
+    content: var(--t3);
 	position: absolute;
 	display: inline-block;
-	inset: 0;
-	margin: auto;
-	margin-bottom: 0;
+    font-family: var(--dosis);
+    color: white;
+    inset: 0;
+    margin: auto;
+    margin-bottom: 0;
 	width: 60px;
 	height: 30px;
 	text-align: center;
@@ -368,6 +434,8 @@ section > h1{
 	position: absolute;
 	line-height: 80px;
 	padding-right: 10px;
+    transform-origin: 0 0;
+    animation: llenar 2s ease;
 }
 
 .progresoG p{
@@ -385,6 +453,23 @@ section > h1{
         transform: scale(1)
     }
 }
+@keyframes llenar {
+    0%{
+        transform: scaleX(0);
+    }
+    100%{
+        transform: scaleX(1)
+    }
+}
+@keyframes rotar {
+    0%{
+        transform: rotate(-135deg);
+    }
+    100%{
+        transform: var(--cr);
+    }
+}
+
 
 /*mediaquerys*/
 @media (max-width: 1000px){
