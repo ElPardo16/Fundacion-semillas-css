@@ -46,15 +46,30 @@ aside ul li{
     display: grid;
     place-items: center start;
     padding-left: 20px;
+    position: relative;
 }
-aside ul li:hover{
+aside ul li:before{
+    content: "";
+    width: 100%;
+    height: 100%;
     background: var(--accent);
+    position: absolute;
+    top: 0;
+    left: -100%;
+    transition: all ease .3s;
 }
+aside ul li:hover::before{
+    left: 0;
+}
+/*aside ul li:hover{
+    background: var(--accent);
+}*/
 .select{
     background: var(--accent);
 }
 
 aside ul li a{
+    position: relative;
 	display: flex; 
 	justify-content: flex-start; 
 	gap: 30px;
@@ -62,7 +77,14 @@ aside ul li a{
 	padding-left: 20px;
     width: 100%;
     height: 100%;
+    z-index: 10;
+    transition: all ease .3s;
 }
+aside ul li a:hover{
+    transform-origin: 0 50%;
+    transform: scale(1.2);
+}
+
 
 aside img{
 	border-radius: 50%;
@@ -202,6 +224,12 @@ section > h1{
 .lista a{
     color:white;
     display: block;
+}
+.lista li:hover{
+    background: var(--gris);
+}
+.lista li:hover a{
+    color: var(--accent);
 }
 .bars{
 	display: grid;
