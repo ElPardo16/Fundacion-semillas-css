@@ -14,7 +14,7 @@ aside{
 aside h1{
 	color: white;
 	padding: 25px;
-	font-size: clamp(2.3rem, 1.5vw ,1.4rem);
+	font-size: clamp(1.4rem, 3vw ,2.3rem);
 }
 
 aside ul{
@@ -52,7 +52,7 @@ aside img{
 aside p{
 	display: inline;
 	color: white;
-	font-size: 1.3rem;
+	font-size: clamp(.9rem , 3vw ,1.3rem);
 	font-weight: bold;
 }
 
@@ -387,16 +387,54 @@ section > h1{
 }
 
 /*mediaquerys*/
-@media (min-width: 481px) and (max-width: 1000px){
+@media (max-width: 1000px){
     .contenedor{
-        grid: min-content max-content / 1fr;
+        grid: max-content max-content / 1fr;
+        width: 100%;
+    }
+    main, aside{
+        width: 100vw;
     }
     aside{
         min-height: inherit;
-        max-height: 40vh;
-        grid: 1fr 3fr / 1fr;
+        grid: 1fr max-content / 1fr;
+        padding: 20px;
+    }
+    main{
+        padding: 30px 30px 60px;	
+    }
+    aside h1{
+        text-align: center;
     }
     aside ul{
         grid: repeat(3, 1fr) / 1fr 1fr;
+    }
+    
+}
+@media (min-width: 481px) and (max-width: 1000px){
+    .stats{
+        max-width: 45%;
+    }
+    .bars{
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: center;
+        align-items: center;
+    }
+}
+@media (max-width: 480px) {
+    aside img{
+        width: 40px;
+    }
+    aside ul{
+        gap: 20px;
+    }
+    aside ul li a{
+        padding-left: 0;
+    }
+    .progresoG{
+        flex-direction: column;
+        gap: 40px;
+        padding: 30px 15px;
     }
 }

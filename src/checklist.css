@@ -1,9 +1,13 @@
-
+.checklist{
+    padding-bottom: 50px;
+    height: calc(100vh - 80px);
+    overflow-y:scroll;
+}
 .title-checklist{
     font-size: clamp(1.3rem, 2.5vw, 3rem);
     padding: 20px ;
     text-align: center;
-    color: var(--accent);
+    color: black;
 }
 .work{
     position: relative;
@@ -171,7 +175,10 @@ a{
 [type="checkbox"]:checked + .label-card .star:before{
     background-color: yellow;
 }
-@media (max-width: 800px) and (min-width: 481px) {
+@media (max-width: 1000px) and (min-width: 481px) {
+    .checklist{
+        height: calc(100vh - 236px);
+    }
     .work{
         width: 95%;
     }
