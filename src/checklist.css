@@ -207,7 +207,8 @@ a{
         width: 95%;
     }
     .add{
-        left: 80%;
+        left: 90%;
+        top: 90%;
     }
     
     .studing{
@@ -255,6 +256,7 @@ a{
         height: 25px;
     }
     .add{
+        top: 90%;
         left: 80%;
     }
     .img-student{
