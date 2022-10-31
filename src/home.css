@@ -72,14 +72,17 @@
 }
 @media (max-width: 1000px) {
     .card {
-        border-radius: 10px;
+        border-radius: 30px;
+    }
+    .menu{
+        top: 90px;
     }
     .card h1 {
         position: static;
         color: black;
         text-align: center;
     }
-    .card::before, .card::after {
+    .card a::before, .card a::after {
         display: none;
     }
     .card:hover h1 {
