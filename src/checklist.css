@@ -240,10 +240,6 @@ a{
         font-size: 15px;
         line-height: 30px
     }
-    .add{
-        position: absolute;
-        
-    }
 }
 @media (max-width: 480px)  {
     .work{
@@ -259,12 +255,7 @@ a{
         height: 25px;
     }
     .add{
-        padding:   4px  8px;
-        font-size: 20px;
-        margin: auto;
-        margin:auto;
-        right: 50%;
-        margin: 20px 0px 20px 0px;
+        left: 80%;
     }
     .img-student{
         width: 40px;
