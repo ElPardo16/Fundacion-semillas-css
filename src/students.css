@@ -1,0 +1,557 @@
+:root{
+    --titulo_m: "Reciclaje";
+    --w1: 85%;
+    --w2: 70%;
+    --w3: 81%;
+    --w4: 35%;
+    --w5: 25%;
+    --t1: "85%";
+    --t2: "70%";
+    --t3: "81%";
+    --t4: "35%";
+    --t5: "25%";
+    --cr: rotate(0);
+}
+.contenedor{
+	display: grid;
+	grid: 1fr / 30% 1fr;
+}
+
+/* ASIDE LEFT */
+
+aside{
+	display: grid;
+	min-height: calc(100vh - 80px);
+    place-items: center;
+	background: var(--dark);
+}
+aside h1{
+	color: white;
+	padding: 25px;
+	font-size: clamp(1.4rem, 3vw ,2.3rem);
+}
+
+aside ul{
+    justify-self: stretch;
+    display: grid;
+    grid: repeat(6, 1fr) / 1fr;
+    place-self: stretch;
+    padding-bottom: 20px;
+}
+
+aside ul li{
+	margin-bottom: 25px;
+	width: 100%;
+	height: 100%;
+    display: grid;
+    place-items: center start;
+    padding-left: 20px;
+    position: relative;
+	overflow: hidden;
+}
+aside ul li:before{
+    content: "";
+    width: 100%;
+    height: 100%;
+    background: var(--accent);
+    position: absolute;
+    top: 0;
+    left: -100%;
+    transition: all ease .3s;
+}
+aside ul li:hover::before{
+    left: 0;
+}
+/*aside ul li:hover{
+    background: var(--accent);
+}*/
+.select{
+    background: var(--accent);
+}
+
+aside ul li a{
+    position: relative;
+	display: flex; 
+	justify-content: flex-start; 
+	gap: 30px;
+	align-items: center;
+	padding-left: 20px;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    transition: all ease .3s;
+}
+aside ul li a:hover{
+    transform-origin: 0 50%;
+    transform: scale(1.2);
+}
+
+
+aside img{
+	border-radius: 50%;
+	width: 80px;
+	transition: width .7s;
+}
+
+aside p{
+	display: inline;
+	color: white;
+	font-size: clamp(.9rem , 3vw ,1.3rem);
+	font-weight: bold;
+}
+
+/* SECTION RIGHT */
+
+main{
+	padding: 30px 30px 20px;
+    display: grid;
+}
+#m2:target{
+    --titulo_m: "Cartografia";
+    --w1: 65%;
+    --w2: 70%;
+    --w3: 90%;
+    --w4: 55%;
+    --w5: 75%;
+    --t1: "65%";
+    --t2: "70%";
+    --t3: "90%";
+    --t4: "55%";
+    --t5: "75%";
+    --cr: rotate(30deg);
+}
+#m3:target{
+    --titulo_m: "Ecologia del paisaje I";
+    --w1: 15%;
+    --w2: 90%;
+    --w3: 60%;
+    --w4: 35%;
+    --w5: 75%;
+    --t1: "15%";
+    --t2: "90%";
+    --t3: "60%";
+    --t4: "35%";
+    --t5: "75%";
+    --cr: rotate(-30deg);
+}
+.card{
+	border-radius: 20px;
+	background: var(--dark);
+    color: white;
+    box-shadow: rgba(0, 0, 0, .6) 3px 3px 7px;
+}
+.card-info{
+	padding: 15px 30px;
+	display: flex;
+	gap: 30px;
+	align-items: center;
+}
+.card-info img{
+	border-radius: 50%;
+	width: 80px;
+}
+.card__texto h1{
+	margin-bottom: 10px;
+	font-family: var(--dosis);
+	font-size: 2rem;
+}
+.card__texto p{
+	font-size: 1.2rem;
+	font-weight: bold;
+}
+section > h1{
+	padding: 20px 0;
+	color: var(--accent);
+	text-align: center;
+}
+.materias{
+	min-height: 40px;
+	position: relative;
+	--r: rotate(180deg);
+	--h: hidden;
+	--t: scaleY(0);
+	overflow: var(--h);
+}
+.materias:hover{
+	--h: normal;
+	--t: scaleY(1);
+	--r: rotate(0);
+}
+.materias::before{
+	content: var(--titulo_m);
+	padding: 15px 30px;
+	display: block;
+	font-size: 1.4rem;
+	font-weight: bold;
+	font-family: var(--dosis);
+	letter-spacing: 1px;
+}
+.materias::after{
+	content: "";
+	position: absolute;
+	width: 0; height: 0;
+	border-top: 0 solid transparent;
+	border: 10px solid transparent;
+	border-bottom: 10px solid white;
+	inset: 0;
+	margin: auto;
+	margin-right: 30px;
+	transform: var(--r);
+	transition: all ease .4s;
+}
+.lista ul{
+	position: absolute;
+	height: 300%;
+	width: 90%;
+	top: 100%; 
+	left: 0; right: 0;
+	background: var(--accent);
+	display: grid;
+	grid: repeat(3,1fr) / 1fr;
+	justify-items: start;
+	margin: 0 auto;
+	transition: all ease .4s;
+	z-index: 100;
+    transform: var(--t);
+    transform-origin: 0 0;
+    font-family: var(--dosis);
+}
+.lista ul li{
+	line-height: 50px;
+	padding-left: 30px;
+    display: block;
+    width: 100%;
+}
+.lista a{
+    color:white;
+    display: block;
+}
+.lista li:hover{
+    background: var(--gris);
+}
+.lista li:hover a{
+    color: var(--accent);
+}
+.bars{
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+	padding: 50px 20px;
+	gap: 40px;
+	place-items: strech;
+}
+
+.stats{
+	padding: 30px 40px;
+	display: flex;
+	flex-direction: column;
+    align-items: center;
+	gap: 30px;
+}
+
+.stats > h1{
+	text-align: center;
+}
+
+.stats > div{
+    width: 160px;
+	height: 160px;
+	position: relative;
+}
+
+.grafica1{
+	display: grid;
+	grid: repeat(5, 1fr) / 1fr;
+	gap: 5px;
+	padding: 20px 0;
+}
+
+.bar{
+	background: rgba(0, 0, 0, .6);
+	position: relative;
+	height: 100%;
+	width: 100%;
+}
+
+.bar::before{
+	content: "";
+	color: white;
+	position: absolute;
+	left: 0; top: 0;
+	height: 100%;
+	width: 80%;
+	text-align: right;
+	padding: 0 5px;
+    transform-origin: 0% 0%;
+    animation: llenar 2s ease;
+	font-family: var(--dosis);
+}
+
+.bar:nth-child(1)::before{
+    content: var(--t1);
+	width: var(--w1);
+    background: rgb(199, 26, 26);
+}
+.bar:nth-child(2)::before{
+    content: var(--t2);
+	width: var(--w2);
+    background: rgb(22, 22, 190);
+}
+.bar:nth-child(3)::before{
+    content: var(--t3);
+	width: var(--w3);
+    background: violet;
+}
+.bar:nth-child(4)::before{
+    content: var(--t4);
+	width: var(--w4);
+    background: gold;
+}
+.bar:nth-child(5)::before{
+    content: var(--t5);
+	width: var(--w5);
+    background: var(--accent);
+}
+
+.grafica2{
+	display: grid;
+	place-items: center;
+	position: relative;
+}
+
+.grafica2 > div{
+	width: 150px;
+	height: 75px;
+	overflow: hidden;
+	position: relative;
+}
+
+.cicle{
+	position: absolute;
+	width: 100%;
+	height: 150px;
+	border-radius: 50%;
+	border: 20px solid rgb(16, 139, 221);
+	border-right-color: rgba(0, 0, 0, .6);
+	border-bottom-color: rgba(0, 0, 0, .6);
+	top: 0; left: 0;
+    animation: rotar 2s ease;
+    transform: var(--cr);
+}
+
+.grafica2 > div::before{
+    content: var(--t3);
+	position: absolute;
+	display: inline-block;
+    font-family: var(--dosis);
+    color: white;
+    inset: 0;
+    margin: auto;
+    margin-bottom: 0;
+	width: 60px;
+	height: 30px;
+	text-align: center;
+	font-weight: bold;
+}
+
+.grafica3{
+	display: grid;
+	grid: 106px 53px / 1fr 1fr;
+	place-items: center;
+	gap: 20px;
+}
+
+.face{
+	width: 80%;
+	height: 100%;
+	border: 5px solid black;
+	border-radius: 50%;
+	position: relative;
+}
+
+.face:nth-child(1){
+	grid-area: 1 / 1 / 2 / 3;
+	width: 106px;
+}
+
+.face::before{
+	content: "";
+	width: 5px;
+	height: 5px;
+	background: black;
+	border-radius: 50%;
+	position: absolute;
+	top: 20%;
+	left: 30%;
+	box-shadow: black 30px 0 0;
+}
+
+.face::after{
+	content: "";
+	width: 30px;
+	height: 30px;
+	inset: 0;
+	margin: auto;
+	margin-top: 33%;
+	position: absolute;
+	border-radius: 50%;
+	border: 5px solid transparent;
+	border-right-color: rgba(0, 0, 0);
+	border-bottom-color: rgba(0, 0, 0);
+	transform: rotate(45deg);
+}
+
+.face:nth-child(2)::after{
+	height: 5px;
+	margin-top: 25px;
+	background: black;
+	border: none;
+	border-radius: 0;
+	transform: rotate(0);
+}
+
+.face:last-child::after{
+	transform: rotate(225deg);
+	width: 14px;
+	height: 14px;
+	margin-top: 20px;
+}
+.face:not(:first-child)::before{
+    box-shadow: black 14px 0 0;
+}
+.face:not(:first-child){
+    opacity: .4;
+}
+.face:first-child{
+    animation: escalar 1.8s ease infinite;
+    border-color: var(--accent);
+}
+.face:first-child::before{
+    background: var(--accent);
+	box-shadow: var(--accent) 30px 0 0;
+}
+.face:first-child::after{
+    border-right-color: var(--accent);
+	border-bottom-color: var(--accent);
+}
+
+.progresoG{
+	padding: 15px;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	gap: 20px;
+}
+
+.triangulo{
+	width: 200px;
+	height: 60px;
+	background: rgba(0, 0, 0, .6);
+	clip-path: polygon(0 100%, 100% 100%, 100% 0);
+	position: relative;
+}
+
+.triangulo::before{
+	content: attr(data-text);
+	width: 70%;
+	height: 100%;
+	background: green;
+	font-size: 1.2rem;
+	font-weight: bold;
+	color: white;
+	font-family: var(--dosis);
+	text-align: right;
+	position: absolute;
+	line-height: 80px;
+	padding-right: 10px;
+    transform-origin: 0 0;
+    animation: llenar 2s ease;
+}
+
+.progresoG p{
+	width: 200px;
+}
+/*keyframes*/
+@keyframes escalar {
+    0%{
+        transform: scale(1)
+    }
+    50%{
+        transform: scale(1.2)
+    }
+    100%{
+        transform: scale(1)
+    }
+}
+@keyframes llenar {
+    0%{
+        transform: scaleX(0);
+    }
+    100%{
+        transform: scaleX(1)
+    }
+}
+@keyframes rotar {
+    0%{
+        transform: rotate(-135deg);
+    }
+    100%{
+        transform: var(--cr);
+    }
+}
+
+
+/*mediaquerys*/
+@media (max-width: 1000px){
+    .contenedor{
+        grid: max-content max-content / 1fr;
+        width: 100%;
+    }
+    main, aside{
+        width: 100vw;
+    }
+    aside{
+        min-height: inherit;
+        grid: 1fr max-content / 1fr;
+        padding: 20px;
+    }
+    main{
+        padding: 30px 30px 60px;	
+    }
+	aside ul li a:hover{
+		transform: scale(1);
+	}
+    aside h1{
+        text-align: center;
+    }
+    aside ul{
+        grid: repeat(3, 1fr) / 1fr 1fr;
+    }
+    
+}
+@media (min-width: 481px) and (max-width: 1000px){
+    .stats{
+        max-width: 45%;
+    }
+    .bars{
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: center;
+        align-items: center;
+    }
+}
+@media (max-width: 480px) {
+    aside img{
+        width: 40px;
+    }
+    aside ul{
+        gap: 20px;
+    }
+    aside ul li a{
+        padding-left: 0;
+    }
+    .progresoG{
+        flex-direction: column;
+        gap: 40px;
+        padding: 30px 15px;
+    }
+}

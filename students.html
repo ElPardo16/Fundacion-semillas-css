@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" id="m3">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,14 +8,134 @@
     <link rel="stylesheet" href="./src/students.css">
     <title>Fundación semillas</title>
 </head>
-<body>
+<body id="m2">
+    <div class="menu">
+        <a href="./index.html">Dashboard</a>
+        <a href="./students.html">Lista De Estudiantes</a>
+        <a href="./checklist.html">Lista De Tareas</a>
+    </div>
     <header>
         <h1>Fundacion semillas</h1>
-        <img src="./src/img/logoSWhite.png" alt="Logo">
+        <a href="./index.html"><img src="./src/img/logoSWhite.png" alt="Logo"></a>
         <div class="user">
             <a href="">Profesor Ernesto Carnicero</a>
             <img src="./src/img/profe.png" alt="Foto usuario">
         </div>
     </header>
+    <div class="contenedor">
+    <aside>
+        <h1>Lista de estudiantes</h1>
+        <ul>
+            <li class="select"><a href="#jay">
+                <img src="./src/img/s3.png" alt="student - Jay">
+                <p>Jay Jonson</p>
+            </a></li>
+            <li><a href="#Jhon">
+                <img src="./src/img/s6.png" alt="student - Jhon">
+                <p>Jhon Doe</p>
+            </a></li>
+            <li><a href="#Jacobo">
+                <img src="./src/img/s1.png" alt="student - Jacobo">
+                <p>Jacobo Bans</p>
+            </a></li>
+            <li><a href="#Mariana">
+                <img src="./src/img/s4.png" alt="student - Mariana">
+                <p>Mariana Celis</p>
+            </a></li>
+            <li><a href="#Lucia">
+                <img src="./src/img/s2.png" alt="student - Lucia">
+                <p>Lucia Derlys</p>
+            </a></li>
+            <li><a href="#Mia">
+                <img src="./src/img/s5.png" alt="student - Mia">
+                <p>Mia Claudia</p>
+            </a></li>
+        </ul>
+    </aside>
+        <main>
+            <section>
+                <div class="card card-info">
+                    <img src="./src/img/s3.png" alt="">
+                    <div class="card__texto">
+                        <h1>Jay Jonson</h1>
+                        <p>Ingenieria Ambiental</p>
+                    </div>
+                </div>
+                <h1>Materias</h1>
+                <div class="card materias">
+                    <div class="lista">
+                        <ul>
+                            <li><a href="#">Reciclaje</a></li>
+                            <li><a href="#m2">Cartografia</a></li>
+                            <li><a href="#m3">Ecologia del paisaje I</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            <section class="bars">
+                <div class="card stats">
+                    <h1>Notas</h1>
+                    <div class="grafica1">
+                        <div class="bar" data-text="85%"></div>
+                        <div class="bar" data-text="70%"></div>
+                        <div class="bar" data-text="81%"></div>
+                        <div class="bar" data-text="35%"></div>
+                        <div class="bar" data-text="25%"></div>
+                    </div>
+                    <p>Calificaciones de los tabajos asignados por el docente</p>
+                </div>
+                <div class="card stats">
+                    <h1>Habilidad</h1>
+                    <div class="grafica2">
+                        <div>
+                            <div class="cicle"></div>
+                        </div>
+                    </div>
+                    <p>Capacidad de desarrollar los trabajos con calidad</p>
+                </div>
+                <div class="card stats">
+                    <h1>Estado de animo</h1>
+                    <div class="grafica3">
+                        <div class="face"></div>
+                        <div class="face"></div>
+                        <div class="face"></div>
+                    </div>
+                    <p>Estado de animo con respecto a la clase</p>
+                </div>
+            </section>
+            <div class="card progresoG">
+                <h1>Progreso General</h1>
+                <div class="triangulo" data-text="70%">
+                    
+                </div>
+                <p>Progreso comparado con el promedio de los estudiantes</p>
+            </div>
+        </main>
+    </div>
+    <footer>
+        <img src="./src/img/logoSWhite.png" alt="logo" srcset="">
+        <div class="text">
+            <h1>Fundacion Semillas - ©2022</h1>
+            <p>Desarrollado por BAM</p>
+            <p>Calle 93 # 7- 14</p>
+        </div>
+        <div class="listas">
+            <ul>
+                <li>Contactanos</li>
+                <li>Facebook</li>
+                <li>Twitter</li>
+                <li>Instagram</li>
+                <li>Linkedin</li>
+            </ul>
+            <ul>
+                <li>Preguntas Frecuentes</li>
+                <li>¿Que hacemos?</li>
+                <li>¿Quienes somos?</li>
+                <li>¿Que programas de formacion tenemos?</li>
+                <li>¿Precios de programas?</li>
+            </ul>
+        </div>
+        <p>Calle 93 # 7- 14</p>
+    </footer>
 </body>
 </html>
