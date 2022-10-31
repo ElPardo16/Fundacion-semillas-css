@@ -153,7 +153,42 @@ las cuales cambiaban su valor cuando se hacia un hover, checked o un target
         }
 
 
-### brayan
+### Lista de estudiantes
+
+Para la lista de estudiantes se uso un sidebar con la etiqueta aside, en el contenedor usamos una imagnes y un texto para representar la foto y el nombre del estudiante
+
+<aside>
+        <h1>Lista de estudiantes</h1>
+        <ul>
+            <li class="select"><a href="#jay">
+                <img src="./src/img/s3.png" alt="student - Jay">
+                <p>Jay Jonson</p>
+            </a></li>
+            <li><a href="#Jhon">
+                <img src="./src/img/s6.png" alt="student - Jhon">
+                <p>Jhon Doe</p>
+            </a></li>
+            <li><a href="#Jacobo">
+                <img src="./src/img/s1.png" alt="student - Jacobo">
+                <p>Jacobo Bans</p>
+            </a></li>
+            <li><a href="#Mariana">
+                <img src="./src/img/s4.png" alt="student - Mariana">
+                <p>Mariana Celis</p>
+            </a></li>
+            <li><a href="#Lucia">
+                <img src="./src/img/s2.png" alt="student - Lucia">
+                <p>Lucia Derlys</p>
+            </a></li>
+            <li><a href="#Mia">
+                <img src="./src/img/s5.png" alt="student - Mia">
+                <p>Mia Claudia</p>
+            </a></li>
+        </ul>
+    </aside>
+
+![image](https://user-images.githubusercontent.com/50422794/199070669-144fbad1-6b51-4341-a784-e20ca554522c.png)
+
 
 ### Mardelys Torres
 
