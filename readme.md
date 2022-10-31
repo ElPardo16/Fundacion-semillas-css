@@ -624,7 +624,6 @@ y se agregaron varias animaciones para cada seccion de estado
         
 ![image](https://user-images.githubusercontent.com/50422794/199077332-89ed69be-1563-42d9-a1ab-eca056455711.png)
 
-### Mardelys Torres
 
 
 ---------------.------HTML----------------------- 
